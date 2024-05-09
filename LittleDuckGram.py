@@ -60,16 +60,20 @@ keywords = {
     'do': 'DO',
 }
 
+lex.lex()
+
 #Gramatica 
 
 def p_program(p):
     '''
-    Programa: PROGRAM ID SEMICOLON Dev_V Dec_F MAIN Body END
+    programa: PROGRAM ID SEMICOLON Dev_V Dec_F MAIN Body END
     '''
+    p[0] = (p[2], p[4], p[5], p[7])
 
-def p_dev_v_epsilon(p):
+
+def p_dev_v(p):
     '''
     Dev_V : EPSILON
+            | VARS
     '''
-
-    pass
+    len 
